@@ -14,7 +14,7 @@ async function chatLogin(ctx,next){
   const { nickName } = ctx.request.body
 
   /* 设置cookie超时时间为1天 */
-  ctx.cookies.set('user', JSON.stringify({nickName}),{ expires: 24 * 60 * 60 * 1000 }) 
+  ctx.cookies.set('user', JSON.stringify({nickName}),{ maxAge: 24 * 60 * 60 * 1000 }) 
   
   if(nickName){
     // await  ctx.redirect('/chat')
