@@ -1,7 +1,7 @@
 let inputEle = document.getElementsByClassName('login-input')[0]
 let btnEle = document.getElementsByClassName('login-button')[0]
 
-
+// 登录按钮
 btnEle.onclick = function(){
 
   let nickName = inputEle.value
@@ -19,6 +19,7 @@ btnEle.onclick = function(){
           
         if(result.status === 'success'){
 
+          // 跳转到chat页面
           location.href = '/chat'
         }
       },

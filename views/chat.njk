@@ -2,10 +2,27 @@
 
 {% block content %}
 
-    
-    <div >
+        <div class='chat-container'>
 
-            chat
+        {# 用户名 #}
+        <div class='chat-header'>
+            {{ nickName }}
+        </div>
+
+        {# 聊天主体 #}
+        <div class='chat-content'>
+            {% for item in contents %}
+                <div>
+                {{ item.nickName }} {{ item.content }}
+                </div>
+            {% endfor %}
+        </div>
+
+        {# 输入 #}
+        <div class='chat-input-container'>
+            <i class="fa fa-smile-o fa-3x chat-intput-smile"></i>
+            <input placeholder='信息输入....' class='chat-input'  value='' />
+        </div>
     </div>
 
 {% endblock %}
@@ -13,7 +30,7 @@
 {% block style %}
     
 {% endblock %}
-
+    
 {% block script %}
-   
+    <script src='/js/chat.js'></script>
 {% endblock %}

@@ -1,6 +1,7 @@
 const controller = require('../controller/chat')
 
 module.exports =  (router) => {
+  
   router.get('/', controller.login)
 
 
@@ -8,4 +9,7 @@ module.exports =  (router) => {
 
   
   router.get('/chat',controller.chat)
+
+
+  router.post('/chat/addContent',controller.addContent)
 }
