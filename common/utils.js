@@ -1,5 +1,5 @@
 const _ = require('lodash')
-
+const moment = require('moment')
 
 /* 
  * 获取随机头像
@@ -21,8 +21,17 @@ function getRandomAvatar(){
   return  avatars[index]
 }
 
+/* 
+ * 格式化时间
+*/
+function formatTime(time){
+
+  return moment(time).locale('zh_cn').format('YYYYMMMMDo  aHH:MM:SS')
+}
+
 
 
 module.exports = {
-  getRandomAvatar
+  getRandomAvatar,
+  formatTime
 }
